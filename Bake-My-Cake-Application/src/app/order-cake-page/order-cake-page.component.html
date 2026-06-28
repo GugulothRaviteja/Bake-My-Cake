@@ -1,0 +1,129 @@
+<div style="display: flex; margin: 20px 10px;">
+
+  <img src="../../assets/{{cakedisplay.id}}.jpg" style="width: 400px; height: 350px;" alt="">
+
+
+  <div style="margin-left: 10px;">
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>{{cakedisplay.name | titlecase}}</b> </h1>
+
+    <h2>Price: ₹{{myorderinfo.cost}} </h2>
+    <h3>{{cakedisplay.isegg}} <span>/ {{cakedisplay.flavour}}</span></h3>
+    <div style="margin-top: 30px;">
+      <b>Weight :</b><br>
+      <div style="display: flex;margin-right: 8px;">
+        <button class="kgbutton" (click)="updateQuantity(1)">1kg</button>
+        <button class="kgbutton" (click)="updateQuantity(1.5)">1.5kg</button>
+        <button class="kgbutton" (click)="updateQuantity(3)">3kg</button>
+        <button class="kgbutton" (click)="updateQuantity(2)">2kg</button>
+      </div>
+    </div><br><br>
+    <div>
+     
+     
+      <b>Number Of Items:</b><br>
+
+
+      <mat-form-field>
+     
+        <input matInput type="text" [(ngModel)]="userEnteredQuantity" name="userEnteredQuantity"
+          (change)="calculateTotalPrice()" style="width: 80px;">
+
+      </mat-form-field>
+ 
+    </div>
+
+    <h2 style="margin-top: 60px;">Total Amount to be paid : ₹{{totalPrice}} </h2>
+  </div>
+  <div style="margin-left: 100px; width: 200px;">
+    <h1>Delivary Details</h1>
+
+    <form>
+      <mat-card style="width: 210%;">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="myorderinfo.firstName" #firstName="ngModel" type="text" name="firstName"
+            required>
+          <mat-error *ngIf="firstName.errors?.['required']">
+            First Name is required
+          </mat-error>
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Email Id</mat-label>
+          <input matInput [(ngModel)]="myorderinfo.emailid" #emailid="ngModel" type="text" name="emailid" required
+            email>
+          <mat-error *ngIf="emailid.errors?.['required']">
+            Email Id is required
+          </mat-error>
+          <mat-error *ngIf="emailid.errors?.['email']">
+            Entered email is not in email pattern
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput [(ngModel)]="myorderinfo.phone" #phone="ngModel" type="text" name="phone" required
+            pattern="[987][0-9]{9}" required>
+          <mat-error *ngIf="phone.errors?.['required']">
+            Phone number is required
+          </mat-error>
+          <mat-error *ngIf="phone.errors?.['pattern']">
+            Phone number must contain 10 digits and starts with 9/8/7
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Address</mat-label>
+          <textarea matInput placeholder="Address" [(ngModel)]="myorderinfo.address" #address="ngModel" name="address"
+            required></textarea>
+          <mat-error *ngIf="address.errors?.['required']">
+            Enter correct address to deliver item
+          </mat-error>
+        </mat-form-field>
+
+       
+    
+        <mat-form-field appearance="fill">
+          <mat-label>Zip Code</mat-label>
+          <input matInput [(ngModel)]="myorderinfo.address1" #address1="ngModel" type="text" name="address1"
+            required pattern="[0-9]{6}">
+          <mat-error *ngIf="address1.errors?.['required']">
+            Zip Code is required
+          </mat-error>
+          <mat-error *ngIf="address1.errors?.['pattern']">
+            Zip Code must contain 5 or 6 digits
+          </mat-error>
+
+        </mat-form-field>
+
+
+
+
+
+        <mat-form-field style="width: 100%;">
+          <input matInput [(ngModel)]="myorderinfo.CakedeliveryDate"   [min]="minDate"   [matDatepicker]="picker" placeholder="Order Date"
+            #orderdate="ngModel" name="orderdate" nrequired>
+          
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker   ></mat-datepicker>
+        </mat-form-field>
+         <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Message On Cake</mat-label>
+          <input matInput [(ngModel)]="myorderinfo.messageonCake" #msgoncake="ngModel" name="msgoncake" required>
+
+        </mat-form-field>
+
+      </mat-card>
+    </form>
+
+  </div>
+
+</div>
+<button (click)="placeOrder()"   [disabled]="totalPrice==0"     style="margin: 0px 63%; width: 300px; height: 60px; background-color: rgb(244, 100, 203);"> <b>ORDER NOW</b></button>
+
+

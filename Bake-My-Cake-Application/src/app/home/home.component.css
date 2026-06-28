@@ -1,0 +1,88 @@
+.grid-container{
+  margin: 0;
+min-width: 800px;
+ 
+}
+.list:hover{
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+ 
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+
+.dashboard-card-content {
+  text-align: center;
+}
+.search{
+  text-align: center;
+  padding: 1%;
+}
+.searchh{
+  margin-left: 35%;
+  min-width: 30%;
+  border-radius: 40px;
+}
+.span{
+  margin-left: 20px;
+   background-color:
+    rgb(123, 241, 178);
+     width: 70px; padding: 6px;
+     color: black;
+}
+.img{
+width:90%; height: 70%; padding-top: 4%; margin-left: 10px; margin-right: 10px;
+}
+.icon{
+  margin-top: 3px; color: rgb(5, 69, 6); padding-top: 8px;
+}
+h1{
+  color: rgb(233, 231, 229); text-align: center; padding: 10px; margin-top: 30px;
+}
+.mat1{
+  color: rgb(245, 237, 237); width: 10px; height: 20px; margin-left: 100px;
+}
+
+/* .imge{
+  background-image: url('../../assets/giphy.webp');
+  background-repeat: no-repeat;
+  background-size: 30% 100%;
+  background-position: left;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  margin-top: 10px;
+ 
+
+}  */
+
+input:hover{
+  
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnn{
+  border-radius: 10px;
+  height: 30px;
+  padding: 4px;
+  background-color: rgb(131, 78, 246);
+}
+/* .imggg{
+  background-image: url("../../assets/showing-cakes-food52.gif");
+  background-repeat: no-repeat;
+  backface-visibility: visible;
+} */
+

@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav   style="background-color: rgb(228, 244, 243);" #drawer class="sidenav" fixedInViewport   [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"[mode]="'side'"[opened]="(isHandset$ | async) === false">
+    <mat-toolbar     *ngIf="loginservice.isUserLoggedIn==true || loginservice.isAdminLoggedIn==true" style="margin-left: 5px;"><mat-icon style="margin-right: 10px;color: rgb(29, 38, 47);">account_circle</mat-icon >{{loginservice.username}}</mat-toolbar>
+
+
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="ViewCake"><mat-icon class="icon-list">home</mat-icon>Home</a>
+      <a mat-list-item  *ngIf="loginservice.isAdminLoggedIn==true && loginservice.isUserLoggedIn==false"    routerLink="addCake"><mat-icon class="icon-list">add_one</mat-icon>Add Cakes</a>
+      <a mat-list-item routerLink="myorder" *ngIf="loginservice.isAdminLoggedIn==false && loginservice.isUserLoggedIn==true"><mat-icon class="icon-list">local_shipping</mat-icon >My Orders</a> 
+      <a mat-list-item routerLink="adminvieworder" *ngIf="loginservice.isAdminLoggedIn==true && loginservice.isUserLoggedIn==false" ><mat-icon class="icon-list">groups</mat-icon >Customer Orders</a> 
+      <a mat-list-item routerLink="register" *ngIf="!loginservice.isUserLoggedIn && !loginservice.isAdminLoggedIn"><mat-icon class="icon-list">app_registration</mat-icon>Register</a>
+      <a mat-list-item  *ngIf="!loginservice.isUserLoggedIn && !loginservice.isAdminLoggedIn" routerLink="login"><mat-icon class="icon-list">login</mat-icon>Login</a>
+      <a mat-list-item  *ngIf="loginservice.isUserLoggedIn || loginservice.isAdminLoggedIn" routerLink="login"  (click)="logout()" ><mat-icon class="icon-list" >logout</mat-icon>Logout</a>
+    </mat-nav-list>
+ 
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span><img src="../../assets/bakewebp.webp"  height="50px"    style="border-radius: 5px;"  alt=""></span>
+
+
+      <div class="icons" style="margin-left: 60%; color: aliceblue;" >
+      
+           
+
+    
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

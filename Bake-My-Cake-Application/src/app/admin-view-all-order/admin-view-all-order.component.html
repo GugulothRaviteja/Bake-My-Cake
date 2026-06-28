@@ -1,0 +1,43 @@
+<h1 style="margin: 10px 10px; color: #5e036c;">My Orders</h1>
+
+
+<table>
+    <thead>
+      <tr >
+        <th>Order id</th>
+        <th>Item</th>
+    
+        <th >Total Price</th>
+        <th >Delivary Date</th>
+        <th >Customer details</th>
+     
+  
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of myorder">
+      <tr >
+
+        <td>{{item.id}}</td>
+        <td>
+           <div style="display: flex;align-items: center;"> 
+            <img src="../../assets/{{item.id}}.jpg" width="300px"   alt="">
+            <div style="margin-left: 30px;">
+           <h2> {{item.cakeName | titlecase}}</h2>
+           <p>   {{item.isegg}} <span>/ {{item.weight}} Kg</span> <span> / {{item.flavour}}</span></p>
+       
+            <p>No of Items :{{item.noofItems}} </p>
+            </div>
+           </div>
+         
+          </td>
+        <td><h2> ₹{{item.totalPrice}}</h2></td>
+        <td><h2>{{item.CakedeliveryDate}}</h2></td>
+        <td><h2>{{item.firstName}}</h2>
+        <p>{{item.emailid}}</p>
+      <p>{{item.phone}}</p>
+    <p>{{item.address}}</p></td>
+
+      </tr>
+    </tbody>
+</table>
+   

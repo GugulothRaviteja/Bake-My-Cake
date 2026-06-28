@@ -1,0 +1,40 @@
+<div class="viewone-container">
+
+    <div style="display: flex; min-height: 100%;">
+        <div>
+            <!-- <h1 style='font-weight:bolder' class="cake-name">{{cakedisplay.name}}</h1> -->
+            <img src="../../assets/{{cakedisplay.id}}.jpg" alt="">
+        </div>
+        <div class="contents">
+            <h1 style='font-weight:bolder' class="cake-name">{{cakedisplay.name |titlecase}}</h1>
+
+            <h1> ₹{{cakedisplay.price}}</h1>
+
+
+
+            <h2 style="font-weight: bold;">Cake Description :</h2>
+            <h4>{{cakedisplay.cakeDescription}}</h4>
+            <h4><b>Egg Or Eggless : </b>{{cakedisplay.isegg | titlecase}}</h4>
+            <h4> <b>Flavour : </b>{{cakedisplay.flavour |titlecase}}</h4>
+            <!-- <h4>{{cakedisplay.price}}</h4> -->
+
+
+        <h4 style="margin-top: 10px;"><mat-icon
+                    style="color: darkgoldenrod; margin-top: 2px; margin-right: 5px;">star</mat-icon>{{cakedisplay.rating}}/5
+            </h4>
+
+            <div *ngIf="loginservice.isAdminLoggedIn==true && loginservice.isUserLoggedIn==false">
+                <button (click)="delete(cakedisplay.id)">
+                    <mat-icon style="color: blue; font-size: xx-large;" class="search-icon" aria-hidden="false"
+                        aria-label="Example home icon" fontIcon="delete">
+                    </mat-icon>
+                </button>
+            </div>
+
+         
+
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,51 @@
+<form [formGroup]="addForm"  (ngSubmit)="onSubmit()">
+    <mat-card class="example-card">
+
+        <h1 style="color:rgb(120, 11, 209); font-weight: bolder;">Add New Cake</h1>
+        <mat-form-field>
+            <mat-label>Cake Name</mat-label>
+            <input matInput     [(ngModel)]="mycake.name" placeholder="Cake Name" formControlName="cakeName">
+            <mat-error *ngIf="cakeName?.errors?.['required']">
+                Cake Name id is required
+              </mat-error>
+            </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Cake Description</mat-label>
+            <input matInput type="text"     [(ngModel)]="mycake.cakeDescription"  formControlName="cakeDescription" required>
+            <mat-error *ngIf="cakeDescription?.errors?.['required']">
+                Cake Name id is required
+              </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Cake Price</mat-label>
+            <input matInput type="number" [(ngModel)]="mycake.price" formControlName="cakePrice">
+            <mat-error *ngIf="cakePrice?.errors?.['required']">
+                Cake Price is required
+              </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Egg or Eggless</mat-label>
+            <input matInput type="text"  [(ngModel)]="mycake.isegg"   formControlName="isegg">
+
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Flavour</mat-label>
+            <input matInput type="text"     [(ngModel)]="mycake.flavour"  formControlName="flavour">
+
+        </mat-form-field>
+
+
+
+
+        <mat-form-field>
+            <mat-label>Cake Rating</mat-label>
+            <input matInput type="number"      [(ngModel)]="mycake.rating"   formControlName="cakeRating">
+
+        </mat-form-field>
+
+        <button (click)="addCake()" type="submit"  style="background-color: rgb(25, 25, 143); color: azure; height: 50px;">ADD
+            CAKE</button>
+    </mat-card>
+</form>

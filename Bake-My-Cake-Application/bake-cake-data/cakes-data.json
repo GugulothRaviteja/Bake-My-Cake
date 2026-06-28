@@ -1,0 +1,288 @@
+{
+  "cakes": [
+    {
+      "name": "Blueberry Cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 450,
+      "isegg": "Eggless",
+      "rating": 4.3,
+      "id": "2",
+      "flavour": "jerry"
+    },
+    {
+      "name": "Cream Cake",
+      "cakeDescription": "Experience the lusciousness of our Cream Cake. This deliciously creamy delight is a treat for your taste buds.",
+      "price": 550,
+      "isegg": "Egg",
+      "rating": 4.6,
+      "id": "3",
+      "flavour": "cream"
+    },
+    {
+      "name": "Cheese Cake",
+      "cakeDescription": "Indulge in the rich and cheesy goodness of our Cheese Cake. This delightful egg-based cake is a cheese lover's dream.",
+      "price": 670,
+      "isegg": "Egg",
+      "rating": 4.3,
+      "id": "4",
+      "flavour": "cheese"
+    },
+    {
+      "name": "Black Berry cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 350,
+      "isegg": "Eggless",
+      "rating": 4.3,
+      "id": "5",
+      "flavour": "cream"
+    },
+    {
+      "name": "Butterscotch cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 450,
+      "isegg": "Egg",
+      "rating": 4.5,
+      "id": "6",
+      "flavour": "jerry"
+    },
+    {
+      "name": "Piniapple cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 300,
+      "isegg": "Egg",
+      "rating": 4.3,
+      "id": "7",
+      "flavour": "jerry"
+    },
+    {
+      "name": "Vennela cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 300,
+      "isegg": "Eggless",
+      "rating": 4,
+      "id": "8",
+      "flavour": "jerry"
+    },
+    {
+      "name": "Chocolate cake",
+      "cakeDescription": "Savor the delightful taste of our Blueberry Cake. Bursting with the goodness of blueberries, this eggless cake is a true delight.",
+      "price": 450,
+      "isegg": "Egg",
+      "rating": 4.5,
+      "id": "9",
+      "flavour": "jerry"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Administrator",
+      "lastName": "",
+      "password": "Admin@123",
+      "confirmPassword": "Admin@123",
+      "gender": "Male",
+      "age": "24",
+      "email": "admin@gmail.com",
+      "phone": "6305017463",
+      "address": {
+        "street": "2903 sixth cross rp road",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "zipCode": "500035"
+      },
+      "role": "admin",
+      "id": "1"
+    },
+    {
+      "firstName": "Raviteja G",
+      "role": "user",
+      "phone": "8088511568",
+      "email": "raviteja2001@gmail.com",
+      "password": "Ravi@123",
+      "confirmPassword": "Ravi@123",
+      "address": {
+        "street": "",
+        "city": "Hyderabad",
+        "state": "Jayanagara 4th block ,near rotary high school ,hyd ,Telangana -507211",
+        "zipCode": ""
+      },
+      "id": "2"
+    },
+    {
+      "firstName": "Arya",
+      "role": "user",
+      "phone": "9999999999",
+      "email": "arya@gmail.com",
+      "password": "Arya@123",
+      "confirmPassword": "Arya@123",
+      "address": {
+        "street": "kalyani nagar",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "zipCode": "500035"
+      },
+      "id": "3"
+    },
+    {
+      "firstName": "vishnu",
+      "role": "user",
+      "phone": "9999999999",
+      "email": "vishnu@gmail.com",
+      "password": "Vishnu@123",
+      "confirmPassword": "Vishnu@123",
+      "address": {
+        "street": "",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "zipCode": "500033"
+      },
+      "id": "4"
+    },
+    {
+      "id": "0559",
+      "firstName": "Guguloth",
+      "lastName": "Raviteja",
+      "email": "gugulothraviteja111213@gmail.com",
+      "phone": "7995755843",
+      "password": "Zxc123",
+      "age": 25,
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "emailid": "ravi2001@gmail.com",
+      "firstName": "Raviteja G",
+      "phone": "7995755843",
+      "address": "Ambethkarnagar,near huda complex,Hyd ,Telangana -500035",
+      "cakeName": "Blueberry Cake",
+      "cost": 450,
+      "flavour": "jerry",
+      "isegg": "Eggless",
+      "weight": 2,
+      "totalPrice": 900,
+      "noofItems": "2",
+      "CakedeliveryDate": "2023-12-25T18:30:00.000Z",
+      "messageonCake": "Happy Birthday",
+      "id": "1"
+    },
+    {
+      "emailid": "chaithras219@gmail.com",
+      "firstName": "Chaithra S",
+      "phone": "8088511568",
+      "address": "Jayanagara 4th block ,near rotary high school ,Hyd ,Telangana -500045",
+      "cakeName": "Kit Kat Cake",
+      "cost": 650,
+      "flavour": "choco",
+      "isegg": "Eggless",
+      "weight": 3,
+      "totalPrice": 1950,
+      "noofItems": "1",
+      "CakedeliveryDate": "2023-12-26T18:30:00.000Z",
+      "messageonCake": "Happy Birthday",
+      "id": "2"
+    },
+    {
+      "emailid": "mouni@gmail.com",
+      "firstName": "Mouni",
+      "phone": "9999999999",
+      "address": "Hyd",
+      "cakeName": "Blueberry Cake",
+      "cost": 450,
+      "flavour": "jerry",
+      "isegg": "Eggless",
+      "weight": 1,
+      "totalPrice": 450,
+      "noofItems": "3",
+      "CakedeliveryDate": "2023-12-26T18:30:00.000Z",
+      "messageonCake": "Happy Birthday",
+      "address1": "574563",
+      "id": "3"
+    },
+    {
+      "emailid": "teja123@gmail.com",
+      "firstName": "Teja",
+      "phone": "1234567890",
+      "address": "Abc ,near high school ,Hyd ,Telangana -500044",
+      "cakeName": "Cream Cake",
+      "cost": 550,
+      "flavour": "cream",
+      "isegg": "Egg",
+      "weight": 2,
+      "totalPrice": 1100,
+      "noofItems": "2",
+      "CakedeliveryDate": "2023-12-28T18:30:00.000Z",
+      "messageonCake": "Happy Birthday",
+      "address1": "789988",
+      "id": "4"
+    },
+    {
+      "emailid": "vishnu@gmail.com",
+      "firstName": "vishnu",
+      "phone": "9999999999",
+      "address": "Telangana",
+      "cakeName": "Cream Cake",
+      "cost": 550,
+      "flavour": "cream",
+      "isegg": "Egg",
+      "weight": 1,
+      "totalPrice": 1650,
+      "noofItems": 1,
+      "CakedeliveryDate": "2023-12-26T18:30:00.000Z",
+      "messageonCake": "ll",
+      "address1": "999999",
+      "id": "5"
+    },
+    {
+      "emailid": "abhi@gmail.com",
+      "firstName": "abhi",
+      "phone": "9999999999",
+      "address": "hyd",
+      "cakeName": "Cream Cake",
+      "cost": 550,
+      "flavour": "cream",
+      "isegg": "Egg",
+      "weight": 1.5,
+      "totalPrice": 0,
+      "noofItems": 1,
+      "CakedeliveryDate": "2023-12-29T18:30:00.000Z",
+      "messageonCake": "",
+      "address1": "999999",
+      "id": "6"
+    },
+    {
+      "emailid": "raviteja2001@gmail.com",
+      "firstName": "Raviteja G",
+      "phone": "8088511568",
+      "address": "Jayanagara 4th block ,near rotary high school ,hyd ,Telangana -507211",
+      "cakeName": "Blueberry Cake",
+      "cost": 450,
+      "flavour": "jerry",
+      "isegg": "Eggless",
+      "weight": 1,
+      "totalPrice": 900,
+      "noofItems": "2",
+      "CakedeliveryDate": "2026-05-22T18:30:00.000Z",
+      "messageonCake": "Extra flavour",
+      "address1": "507211",
+      "id": "QSfGd9TS9e8"
+    },
+    {
+      "emailid": "raviteja2001@gmail.com",
+      "firstName": "Raviteja G",
+      "phone": "8088511568",
+      "address": "Jayanagara 4th block ,near rotary high school ,hyd ,Telangana -507211",
+      "cakeName": "Cream Cake",
+      "cost": 550,
+      "flavour": "cream",
+      "isegg": "Egg",
+      "weight": 1,
+      "totalPrice": 0,
+      "noofItems": 1,
+      "CakedeliveryDate": "",
+      "messageonCake": "",
+      "address1": "",
+      "id": "vkEbqX2FhyQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

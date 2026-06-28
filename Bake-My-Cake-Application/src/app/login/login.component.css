@@ -1,0 +1,12 @@
+.example-card {
+    max-width: 600px;
+    max-height: 400px;
+    margin-left: 30%;
+    margin-top: 4%;
+    border: 1px black;
+    padding: 30px;
+    background-color: rgb(176, 230, 240);
+    
+  }
+
+  

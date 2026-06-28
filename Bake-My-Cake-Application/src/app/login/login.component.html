@@ -1,0 +1,46 @@
+<form (ngSubmit)="login()" #loginForm="ngForm">
+
+
+  <mat-card class="example-card">
+
+    <h1 style="color:blueviolet; font-weight: bolder;">Sign In</h1>
+
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Email id" #email="ngModel" type="email" name="email" [(ngModel)]="user.email"
+        required email>
+      <mat-error *ngIf="email.errors?.['required']">
+        email id is required
+      </mat-error>
+      <mat-error *ngIf="email.errors?.['email']">
+        enter valid email id
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" #password="ngModel" type="password" name="email"
+        [(ngModel)]="user.password" required password [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.errors?.['required']">
+        password is required
+      </mat-error>
+      <mat-error *ngIf="password.errors?.['password']">
+        password is requierd
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary" type="submit"
+        style=" height: 50px; border-radius: 10px; width: 200px;">SIGN IN</button>
+      <button mat-raised-button color="accent" type="reset"
+        style=" height: 50px; border-radius: 10px; margin-left: 100px; width: 200px; ">RESET</button>
+    </div>
+ 
+    <b style="margin-top: 30px;color: black;">Not a member?<a routerLink="/register" style="margin-left: 10px;">Sing up now</a></b>
+
+
+  </mat-card>
+
+</form>

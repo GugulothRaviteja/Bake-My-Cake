@@ -1,0 +1,95 @@
+<form [formGroup]="registerForm" (ngSubmit)="saveUser()">
+
+
+  <mat-card class="example-card">
+    <h1 style="color:rgb(58, 29, 243); font-weight: bolder;">CREATE ACCOUNT</h1>
+    <mat-form-field>
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="firstName">
+
+      <mat-error *ngIf="firstName?.errors?.['required']">First Name Is Mandatory </mat-error>
+      <mat-error *ngIf="firstName?.errors?.['minlength']">First Name should contain atleast 2 characters </mat-error>
+      <mat-error *ngIf="firstName?.errors?.['pattern']">First Name should includes both upper case and lower case </mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>phone Number</mat-label>
+      <input matInput formControlName="phone">
+      <mat-error *ngIf="registerForm.controls.phone.errors?.['pattern']"> Invalid phone number format</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email Id </mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="email?.errors?.['required']">Email id is required </mat-error>
+      <mat-error *ngIf="email?.errors?.['pattern']">Enter valid email address </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password?.errors?.['required']">Password is required </mat-error>
+      <mat-error *ngIf="password?.errors?.['pattern']">Password must contain the specified pattern</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required </mat-error>
+      <!-- <mat-error *ngIf="confirmPassword?.errors?.['pattern']"> Confirm Password must contain the specified -->
+      <!-- pattern</mat-error> -->
+      <mat-error *ngIf="registerForm.errors?.['passwordMismatch']">Password and Confirm Password do not matching
+      </mat-error>
+    </mat-form-field>
+
+    <h1 style="color: black;">Address</h1>
+    <div formGroupName="address" style="min-width:600px ;">
+
+      <div id="radio">
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input matInput formControlName="city">
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill" style="margin-left: 30px;">
+          <mat-label>State</mat-label>
+          <input matInput formControlName="state">
+        </mat-form-field>
+
+
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Street</mat-label>
+          <input matInput formControlName="street">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" id="radio" style="margin-left: 30px;">
+          <mat-label>Zip Code</mat-label>
+          <input matInput formControlName="zipCode">
+          <mat-error *ngIf="zipCode?.errors?.['required']">Zip Code Is Mandatory</mat-error>
+          <mat-error *ngIf="zipCode?.errors?.['pattern']">Zip code must be a valid 6-digit number</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      
+      <button mat-raised-button color="primary" type="submit" style=" height: 50px; border-radius: 10px; width: 250px;"
+        [disabled]="registerForm.invalid">SIGN IN</button>
+      <button mat-raised-button color="primary" type="reset"
+        style=" height: 50px; border-radius: 10px; margin-left: 40px; width: 250px; background-color: rgb(225, 24, 182);">RESET</button>
+    </div>
+    <b style="margin-top: 30px;color: rgb(16, 19, 22);">Already a member?<a routerLink="/login"
+        style="margin-left: 10px;color: rgb(28, 29, 29);">Login</a></b>
+  </mat-card>
+
+</form>

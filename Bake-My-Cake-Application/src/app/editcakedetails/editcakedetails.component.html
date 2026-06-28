@@ -1,0 +1,50 @@
+
+<form [formGroup]="editForm" novalidate>
+
+<mat-card class="example-card">
+
+    <h1 >Update Cake Details</h1>
+
+    <mat-form-field>
+        <mat-label>Cake Name</mat-label>
+        <input matInput [(ngModel)]="mycake.id" readonly formControlName="id">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Cake Name</mat-label>
+        <input matInput [(ngModel)]="mycake.name" placeholder="Cake Name" formControlName="cakeName">
+   </mat-form-field>
+        ]
+    <mat-form-field>
+        <mat-label>Cake Description</mat-label>
+        <input matInput [(ngModel)]="mycake.cakeDescription" formControlName="cakeDescription">
+   </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cake Price</mat-label>
+        <input matInput  type="number"    [(ngModel)]="mycake.price"  formControlName="cakePrice">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Cake type(EGG/EGGLESS)</mat-label>
+        <input matInput [(ngModel)]="mycake.isegg" formControlName="isEgg" >
+    </mat-form-field>
+       
+    <mat-form-field>
+        <mat-label>Flavour</mat-label>
+        <input matInput [(ngModel)]="mycake.flavour" formControlName="flavour" >
+    </mat-form-field>
+
+
+    <mat-form-field>
+
+        <mat-label>Cake Rating</mat-label>
+
+        <input matInput   type="number"   [(ngModel)]="mycake.rating"  formControlName="cakeRating">
+
+    </mat-form-field>
+
+    <button (click)="editCake()">Edit Cake Details</button>
+
+</mat-card>
+</form>
