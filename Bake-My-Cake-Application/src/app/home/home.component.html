@@ -1,58 +1,82 @@
-<img src="assets/{{cake.id}}.jpg" alt="" class="img">
-<div class="grid-container" >
+<img src="assets/showing-cakes-food52.gif" width="100%" height="400px" alt="">
+
+<div class="grid-container">
   <div class="imge">
     <div style="display: flex; margin-left: 35%;">
-
-      <h1 style="color: rgb(237, 16, 215);"><b>" Discover the magic in every bite!!! "</b></h1>
-
+      <h1 style="color: rgb(237, 16, 215);">
+        <b>" Discover the magic in every bite!!! "</b>
+      </h1>
     </div>
-
 
     <div class="imggg">
       <mat-form-field appearance="outline" class="searchh">
-        <input matInput placeholder="Search Here" [(ngModel)]="searchString" (mouseenter)="filter()">
+        <input
+          matInput
+          placeholder="Search Here"
+          [(ngModel)]="searchString"
+          (mouseenter)="filter()">
 
         <mat-icon matSuffix (click)="filter()">search</mat-icon>
       </mat-form-field>
     </div>
   </div>
 
-
   <mat-grid-list cols="4" rowHeight="350px">
-
-    <mat-grid-tile *ngFor="let cake of displayCake " class="list">
+    <mat-grid-tile *ngFor="let cake of displayCake" class="list">
       <mat-card class="dashboard-card">
 
         <mat-card-header>
           <mat-card-title style="margin-left: 70px;">
-            {{cake.name |titlecase}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu"
-              aria-label="Toggle menu"><mat-icon>more_vert</mat-icon></button>
+            {{ cake.name | titlecase }}
+
+            <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+
             <mat-menu #menu="matMenu" xPosition="before">
-              <a routerLink="viewCakedetails/{{cake.id}}" mat-menu-item> <mat-icon>view_module</mat-icon>ViewDetails</a>
-              <a routerLink="editcakedetails/{{cake.id}}"
+              <a routerLink="viewCakedetails/{{cake.id}}" mat-menu-item>
+                <mat-icon>view_module</mat-icon>
+                ViewDetails
+              </a>
+
+              <a
+                routerLink="editcakedetails/{{cake.id}}"
                 *ngIf="loginservice.isAdminLoggedIn==true && loginservice.isUserLoggedIn==false"
-                mat-menu-item>Edit<mat-icon>edit</mat-icon></a>
+                mat-menu-item>
+                Edit
+                <mat-icon>edit</mat-icon>
+              </a>
             </mat-menu>
           </mat-card-title>
-
         </mat-card-header>
 
         <mat-card-content class="dashboard-card-content">
-
         </mat-card-content>
-        <img src="../../assets/{{cake.id}}.jpg" alt="" class="img">
+
+        <img src="assets/{{cake.id}}.jpg" alt="" class="img">
+
         <h3 style="text-align: start; margin-left: 70px;">
-          ₹{{cake.price}}
-          <span class="span">{{cake.rating}} <mat-icon class="icon">star</mat-icon></span>
+          ₹{{ cake.price }}
+          <span class="span">
+            {{ cake.rating }}
+            <mat-icon class="icon">star</mat-icon>
+          </span>
         </h3>
 
-      <button class="btnn" [disabled]="!loginservice.isUserLoggedIn"  *ngIf="loginservice.isAdminLoggedIn==false"
-         style="width: 100px; height: 140px; text-align: center;margin-left: 80px;  margin-bottom: 10px;  "
-        routerLink="order/{{cake.id}}">Buy Now</button>
+        <button
+          class="btnn"
+          [disabled]="!loginservice.isUserLoggedIn"
+          *ngIf="loginservice.isAdminLoggedIn==false"
+          style="width: 100px; height: 140px; text-align: center; margin-left: 80px; margin-bottom: 10px;"
+          routerLink="order/{{cake.id}}">
+          Buy Now
+        </button>
 
       </mat-card>
     </mat-grid-tile>
-
   </mat-grid-list>
 </div>
