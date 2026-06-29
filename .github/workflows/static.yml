@@ -2,7 +2,8 @@ name: Deploy Angular App to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,32 +16,36 @@ concurrency:
 
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
         working-directory: ./Bake-My-Cake-Application
+        run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --base-href /Bake-My-Cake/
         working-directory: ./Bake-My-Cake-Application
+        run: npm run build -- --base-href /Bake-My-Cake/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload build files
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./Bake-My-Cake-Application/dist
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
