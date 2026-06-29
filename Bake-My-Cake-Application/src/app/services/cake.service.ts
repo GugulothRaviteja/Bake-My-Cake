@@ -12,8 +12,8 @@ export class CakeService {
    allcake:Cake[]=[]
    
   getCakes(){
-    return this.httpclient.get<Cake[]>("  http://localhost:3000/cakes");
-  }
+  return this.httpclient.get<any>("assets/cakes-data.json");
+}
   addCake(cake:Cake){
     return this.httpclient.post<Cake>("http://localhost:3000/cakes",cake)
   }
