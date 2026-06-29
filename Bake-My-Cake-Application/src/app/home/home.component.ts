@@ -26,10 +26,10 @@ export class HomeComponent implements OnInit {
   }
 
   getAllCake() {
-    this.cakeserv.getCakes().subscribe((cakedata) => { this.displayCake = cakedata }
-    )
-
-  }
+  this.cakeserv.getCakes().subscribe((cakedata: any) => {
+    this.displayCake = cakedata.cakes;
+  });
+}
   filter() {
 if(this.searchString!="")
 {
